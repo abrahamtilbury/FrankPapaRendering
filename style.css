@@ -35,7 +35,7 @@
 }
 
 html {
-    color-scheme: dark;
+    color-scheme: light;
     scroll-padding-top: 110px;
     scroll-behavior: smooth;
 }
@@ -195,13 +195,13 @@ p {
     font-weight: 800;
     letter-spacing: .05em;
     text-transform: uppercase;
-    color: var(--text);
+    color: #fff;
     line-height: 1.2;
     white-space: nowrap;
 }
 
 .site-logo:hover {
-    color: var(--accent);
+    color: var(--accent-bright);
 }
 
 .desktop-nav {
@@ -284,10 +284,10 @@ p {
     left: 0;
     right: 0;
     z-index: 1001;
-    background: rgba(12,12,12,.92);
+    background: rgba(244,242,236,.96);
     backdrop-filter: blur(18px);
     -webkit-backdrop-filter: blur(18px);
-    border-top: 1px solid rgba(255,255,255,.10);
+    border-top: 1px solid var(--line);
     max-height: 0;
     opacity: 0;
     visibility: hidden;
@@ -353,15 +353,26 @@ p {
 
 .button-secondary {
     background: transparent;
-    color: #fff;
-    border: 1px solid rgba(255,255,255,.35);
+    color: var(--text);
+    border: 1px solid rgba(0,0,0,.25);
 }
 
 .button-secondary:hover {
+    background: var(--text);
+    border-color: var(--text);
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+.hero .button-secondary {
+    color: #fff;
+    border-color: rgba(255,255,255,.35);
+}
+
+.hero .button-secondary:hover {
     background: #fff;
     border-color: #fff;
     color: #111;
-    transform: translateY(-2px);
 }
 
 .text-link {
@@ -682,14 +693,14 @@ p {
 
 .profile-tags span {
     padding: 7px 10px;
-    border: 1px solid rgba(255,255,255,.18);
+    border: 1px solid rgba(0,0,0,.12);
     border-left: 2px solid var(--accent);
     color: var(--text-dim);
     font-size: 10px;
     font-weight: 700;
     letter-spacing: .06em;
     text-transform: uppercase;
-    background: rgba(255,255,255,.02);
+    background: rgba(0,0,0,.03);
     border-radius: var(--radius-sm);
 }
 
@@ -853,7 +864,7 @@ p {
 
 .project-profile-tags span {
     padding: 5px 9px;
-    border: 1px solid rgba(255,255,255,.18);
+    border: 1px solid rgba(0,0,0,.12);
     border-left: 2px solid var(--accent);
     color: var(--text-dim);
     font-size: 10px;
@@ -1017,8 +1028,9 @@ p {
    Footer
 ========================== */
 .site-footer {
-    padding: 28px 0 22px;
-    background: #080808;
+   padding: 28px 0 22px;
+   background: #1a1916;
+   color: #f3f2ee;
 }
 
 .footer-inner {
@@ -1045,7 +1057,7 @@ p {
 .footer-contact {
     font-size: 14px;
     line-height: 1.45;
-    color: var(--text-muted);
+    color: rgba(243,242,238,.7);
 }
 
 .footer-contact strong {
@@ -1055,7 +1067,7 @@ p {
     font-weight: 800;
     letter-spacing: .08em;
     text-transform: uppercase;
-    color: var(--text);
+    color: #f3f2ee;
 }
 
 .footer-contact a {
@@ -1074,7 +1086,7 @@ p {
 }
 
 .footer-links a {
-    color: var(--text-muted);
+    color: rgba(243,242,238,.65);
     font-size: 14px;
     font-weight: 700;
     letter-spacing: .05em;
@@ -1082,7 +1094,7 @@ p {
 }
 
 .footer-links a:hover {
-    color: var(--text);
+    color: #fff;
 }
 
 .copyright {
@@ -1090,8 +1102,9 @@ p {
     margin: 28px auto 0;
     padding-top: 18px;
     border-top: 1px solid var(--line);
-    color: #888;
+    color: rgba(243,242,238,.45);
     font-size: 13px;
+   border-top-color: rgba(255,255,255,.1);
 }
 
 /* ==========================
