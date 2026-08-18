@@ -72,58 +72,59 @@
     </section>
 
     <!-- Details + form -->
-    <section class="section" style="padding-top: clamp(40px, 5vw, 64px);">
+    <!-- Details + form -->
+    <section class="section">
       <div class="container">
 
-        <div class="about-heading" style="margin-bottom: 36px;">
+        <div class="about-heading contact-heading">
           <h2 data-content="Contact.Intro.Heading">Get a quote</h2>
-          <p class="about-intro" data-content="Contact.Intro.Text" style="margin-bottom: 0;">
+          <p class="about-intro" data-content="Contact.Intro.Text">
             Tell us about the walls, the suburb, and whether the work is internal, external, or both. We will come back with availability and pricing.
           </p>
         </div>
 
         <!-- Contact details row -->
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 28px; margin-bottom: 48px;">
-          <div>
-            <p style="margin: 0 0 8px; font-size: 11px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; color: var(--text-dim);">Phone</p>
-            <a href="tel:0428940262" style="font-weight: 600;">0428 940 262</a>
+        <div class="contact-info-grid">
+          <div class="contact-info-item">
+            <span class="micro-heading">Phone</span>
+            <a href="tel:0428940262">0428 940 262</a>
           </div>
-          <div>
-            <p style="margin: 0 0 8px; font-size: 11px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; color: var(--text-dim);">Email</p>
-            <a href="mailto:frankpapaplastering@gmail.com" style="font-weight: 600;">frankpapaplastering@gmail.com</a>
+          <div class="contact-info-item">
+            <span class="micro-heading">Email</span>
+            <a href="mailto:frankpapaplastering@gmail.com">frankpapaplastering@gmail.com</a>
           </div>
-          <div>
-            <p style="margin: 0 0 8px; font-size: 11px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; color: var(--text-dim);">Area</p>
-            <p style="margin: 0; font-weight: 600;">All areas of Perth</p>
+          <div class="contact-info-item">
+            <span class="micro-heading">Area</span>
+            <span>All areas of Perth</span>
           </div>
-          <div>
-            <p style="margin: 0 0 8px; font-size: 11px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; color: var(--text-dim);">Hours</p>
-            <p style="margin: 0; font-weight: 600;">Mon–Fri 7am–4pm</p>
+          <div class="contact-info-item">
+            <span class="micro-heading">Hours</span>
+            <span>Mon–Fri 7am–4pm</span>
           </div>
         </div>
 
-        <!-- Simple form -->
-        <form class="contact-form" action="#" method="post" style="max-width: 720px;">
-          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px 24px; margin-bottom: 24px;">
-            <div style="display: flex; flex-direction: column; gap: 8px;">
-              <label for="name" style="font-size: 12px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--text-dim);">Name</label>
-              <input id="name" name="name" type="text" required style="padding: 14px 16px; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius-sm); color: var(--text); font: inherit; font-size: 15px;">
+        <!-- Quote form -->
+        <form class="quote-form" action="#" method="post">
+          <div class="form-grid">
+            <div class="form-group">
+              <label for="name" class="form-label">Name</label>
+              <input id="name" name="name" type="text" required>
             </div>
-            <div style="display: flex; flex-direction: column; gap: 8px;">
-              <label for="phone" style="font-size: 12px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--text-dim);">Phone</label>
-              <input id="phone" name="phone" type="tel" required style="padding: 14px 16px; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius-sm); color: var(--text); font: inherit; font-size: 15px;">
+            <div class="form-group">
+              <label for="phone" class="form-label">Phone</label>
+              <input id="phone" name="phone" type="tel" required>
             </div>
-            <div style="display: flex; flex-direction: column; gap: 8px;">
-              <label for="email" style="font-size: 12px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--text-dim);">Email</label>
-              <input id="email" name="email" type="email" style="padding: 14px 16px; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius-sm); color: var(--text); font: inherit; font-size: 15px;">
+            <div class="form-group">
+              <label for="email" class="form-label">Email</label>
+              <input id="email" name="email" type="email">
             </div>
-            <div style="display: flex; flex-direction: column; gap: 8px;">
-              <label for="suburb" style="font-size: 12px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--text-dim);">Suburb</label>
-              <input id="suburb" name="suburb" type="text" style="padding: 14px 16px; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius-sm); color: var(--text); font: inherit; font-size: 15px;">
+            <div class="form-group">
+              <label for="suburb" class="form-label">Suburb</label>
+              <input id="suburb" name="suburb" type="text">
             </div>
-            <div style="display: flex; flex-direction: column; gap: 8px; grid-column: 1 / -1;">
-              <label for="work-type" style="font-size: 12px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--text-dim);">Work type</label>
-              <select id="work-type" name="work-type" style="padding: 14px 16px; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius-sm); color: var(--text); font: inherit; font-size: 15px;">
+            <div class="form-group full-width">
+              <label for="work-type" class="form-label">Work type</label>
+              <select id="work-type" name="work-type">
                 <option value="">Select…</option>
                 <option value="internal">Internal float & white set</option>
                 <option value="external">External rendering</option>
@@ -131,9 +132,9 @@
                 <option value="repair">Repairs / maintenance</option>
               </select>
             </div>
-            <div style="display: flex; flex-direction: column; gap: 8px; grid-column: 1 / -1;">
-              <label for="message" style="font-size: 12px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--text-dim);">Project details</label>
-              <textarea id="message" name="message" rows="5" style="padding: 14px 16px; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius-sm); color: var(--text); font: inherit; font-size: 15px; resize: vertical;"></textarea>
+            <div class="form-group full-width">
+              <label for="message" class="form-label">Project details</label>
+              <textarea id="message" name="message" rows="5"></textarea>
             </div>
           </div>
 
