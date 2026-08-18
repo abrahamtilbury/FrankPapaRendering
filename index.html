@@ -63,9 +63,6 @@
             <a href="index.html" class="site-logo">
                 Frank Papa Plastering
             </a>
-                <!-- Replace with actual logo when ready -->
-                <img src="images/logo.webp" alt="Frank Papa Plastering" width="280" height="80"/>
-            </a>
     
             <nav class="desktop-nav" aria-label="Primary navigation">
                 <a href="index.html" aria-current="page">Home</a>
@@ -120,11 +117,12 @@
         
             <div class="hero-content">
                 <h1>
-                  Frank Papa Plastering
-                  <span>Specialising in solid wall plastering</span>
+                  <span data-content="Hero.Title">Frank Papa Plastering</span>
+                  <span data-content="Hero.Subtitle">Specialising in solid wall plastering</span>
                 </h1>
-<p class="hero-text">Internal and external · Renovations · Home improvements · Repairs · Maintenance · All areas of Perth</p>
-                <p class="hero-text">Traditional solid plastering on brick and block. Over forty years experience. No gyprock. No ceiling work.</p>
+                <p class="hero-text" data-content="Hero.Text">
+                  Internal and external solid wall plastering on brick and block · Renovations · Home improvements · Repairs · Maintenance · All areas of Perth. Over forty years experience. No gyprock. No ceiling work.
+                </p>
             </div>
         
             <div class="hero-actions">
@@ -147,11 +145,12 @@
         <section id="about" class="about section">
             <div class="container about-container">
                 <div class="about-heading">
-                    <h2>Solid walls. Traditional craft.</h2>
+                    <h2 data-content="About.Heading">Solid walls. Traditional craft.</h2>
+                    <p class="about-intro" data-content="About.Intro">
+                        Frank Papa Plastering specialises exclusively in solid wall plastering — internal float and white set, and external rendering — across all areas of Perth. No gyprock. No ceilings.
+                    </p>
                 </div>
-                <p class="about-intro">
-                    Frank Papa Plastering specialises exclusively in solid wall plastering — internal float and white set, and external rendering — across all areas of Perth. No gyprock. No ceilings.
-                </p>
+                
                 <div class="about-features">
                     <article>
                         <span class="about-feature-number">01</span>
@@ -186,12 +185,10 @@
             <div class="container">
                 <div class="profiles-intro">
                     <div class="profiles-heading">
-                        <h2>What we do</h2>
-                    </div>
-                    <div class="profiles-description">
-                        <p>
-                            Solid wall plastering only. Internal and external work on brick and block across Perth.
-                        </p>
+                        <h2 data-content="Services.Heading">What we do</h2>
+                            <p data-content="Services.Description">
+                                Solid wall plastering only. Internal and external work on brick and block across Perth.
+                            </p>
                     </div>
                 </div>
                 
@@ -205,8 +202,8 @@
                             <img src="images/internal-float-set.webp" alt="Internal float and white set plastering" width="1200" height="750" loading="lazy"/>
                         </div>
                         <div class="profile-content">
-                            <h3>Internal float &amp; white set</h3>
-                            <p>
+                            <h3 data-content="Service 1.Title">Internal float & white set</h3>
+                            <p data-content="Service 1.Text">
                                 Traditional two-coat solid plastering. A robust grey float coat is applied to the masonry, then finished with a hard white set coat. The result is a smooth, dense, paint-ready surface with no sheet joints.
                             </p>
                             <div class="profile-tags">
@@ -225,8 +222,8 @@
                             <img src="images/external-render.webp" alt="External solid wall rendering" width="1200" height="750" loading="lazy"/>
                         </div>
                         <div class="profile-content">
-                            <h3>External rendering</h3>
-                            <p>
+                            <h3 data-content="Service 2.Title">External rendering</h3>
+                            <p data-content="Service 2.Text">
                                 Sand finish and traditional external renders applied directly to solid masonry. Suitable for new work, renovations, and refreshing weathered brick surfaces.
                             </p>
                             <div class="profile-tags">
@@ -239,65 +236,7 @@
                 </div>
             </div>
         </section>
-        
-        <!-- =========================
-             PROCESS
-             New section — the plastering equivalent of the “profile” deep-dive
-        ========================== -->
-
-        <section id="process" class="feature-section">
-            <div class="feature-copy">
-                <h2>How solid plastering is built</h2>
-                <p>
-                    Solid wall plastering is applied in layers directly onto the masonry. Each coat has a clear job: the float coat creates a strong, even base; the set coat delivers the final hard, smooth face.
-                </p>
-                <a href="contact.html" class="text-link">Request a quote<span>↗</span></a>
-            </div>
-            <div class="feature-image">
-                <!-- Use a process or finished-wall image -->
-                <img src="images/process.webp" alt="Solid plastering process" width="570" height="324"/>
-            </div>
-        </section>
-        
-        <!-- =========================
-             WHO IT’S FOR
-             Purpose-built client sections (homeowners, builders, renovators)
-        ========================== -->
-        
-        <section id="clients" class="aprons-section section">
-            <div class="container">
-                <div class="aprons-intro">
-                    <div class="aprons-heading">
-                        <h2>Who this work is for</h2>
-                    </div>
-                    <div class="aprons-intro-copy">
-                        <p>
-                            Solid wall plastering suits double-brick homes, renovations, extensions and new builds where a traditional hard finish is required.
-                        </p>
-                    </div>
-                </div>
-                
-                <div class="apron-products">
-                    <article class="apron-product">
-                        <div class="apron-product-content">
-                            <h3>Homeowners &amp; renovators</h3>
-                            <p>
-                                Ideal for Perth double-brick houses undergoing internal refreshes, room additions or full external updates where a seamless hard finish is preferred over plasterboard.
-                            </p>
-                        </div>
-                    </article>
-                    <article class="apron-product">
-                        <div class="apron-product-content">
-                            <h3>Builders &amp; new work</h3>
-                            <p>
-                                Specified on solid construction projects that require traditional float-and-set internal walls or external sand-finish renders.
-                            </p>
-                        </div>
-                    </article>
-                </div>              
-            </div>
-        </section>
-        
+         
         <!-- =========================
             GALLERY
             Kept the card structure; change content to finished walls / finishes
@@ -369,8 +308,8 @@
         <section id="contact" class="contact section">
             <div class="contact-content">
                 <h2>
-                    Ready for solid walls that last?<br>
-                    Request an obligation-free quote.
+                  <span data-content="Contact.Heading">Ready for solid walls that last?</span><br>
+                  <span data-content="Contact.Text">Request an obligation-free quote.</span>
                 </h2>
                 <div class="about-cta-actions">
                     <a href="contact.html" class="button button-primary">Get a Quote</a>
@@ -410,8 +349,9 @@
             </div>
             <div class="footer-links">
                 <a href="index.html" aria-current="page">Home</a>
-                <a href="#services">Services</a>
-                <a href="#process">Process</a>
+                <a href="services.html">Services</a>
+                <a href="works.html">Works</a>
+                <a href="about.html">About</a>
                 <a href="contact.html">Contact</a>
             </div>
         </div>
