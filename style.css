@@ -1248,29 +1248,6 @@ p {
     flex-wrap: wrap;
 }
 
-.contact .button-primary, .about-cta .button-primary {
-    background: #f3f2ee;
-    border-color: #f3f2ee;
-    color: #1a1916;
-}
-
-.contact .button-primary:hover, .about-cta .button-primary:hover {
-    background: #ffffff;
-    border-color: #ffffff;
-    color: #1a1916;
-}
-
-.contact .button-secondary, .about-cta .button-secondary {
-    border-color: rgba(243,242,238,.35);
-    color: #f3f2ee;
-}
-
-.contact .button-secondary:hover, .about-cta .button-secondary:hover {
-    background: #f3f2ee;
-    border-color: #f3f2ee;
-    color: #1a1916;
-}
-
 /* ==========================
    Contact Page Layout
 ========================== */
@@ -1440,29 +1417,6 @@ p {
 
 .footer-links a:hover {
     color: var(--text-muted);
-}
-
-.contact .button-primary, .about-cta .button-primary {
-    background: #f3f2ee;
-    border-color: #f3f2ee;
-    color: #1a1916;
-}
-
-.contact .button-primary:hover, .about-cta .button-primary:hover {
-    background: #ffffff;
-    border-color: #ffffff;
-    color: #1a1916;
-}
-
-.contact .button-secondary, .about-cta .button-secondary {
-    border-color: rgba(243,242,238,.35);
-    color: #f3f2ee;
-}
-
-.contact .button-secondary:hover, .about-cta .button-secondary:hover {
-    background: #f3f2ee;
-    border-color: #f3f2ee;
-    color: #1a1916;
 }
 
 
