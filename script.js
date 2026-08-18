@@ -32,9 +32,10 @@ async function loadContentFromSheet() {
     // Skip header row
     const data = {};
     for (let i = 1; i < rows.length; i++) {
-      const [section, field, content] = rows[i];
-      if (section && field) {
-        data[`${section}.${field}`] = content || "";
+      const [page, section, field, content] = rows[i];
+      if (page && section && field) {
+        const key = `${page}.${section}.${field}`;
+        data[key] = content || "";
       }
     }
 
