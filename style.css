@@ -2,18 +2,18 @@
    Design Tokens — Solid Wall
 ========================== */
 :root {
-    --bg: #0c0c0b;
-    --surface: #141413;
-    --surface-2: #1c1c1a;
+    --bg: #f4f2ec;          /* warm off-white plaster */
+    --surface: #ebe8e1;     /* soft grey-plaster */
+    --surface-2: #e2ded5;
 
-    --text: #f3f2ee;
-    --text-muted: #9a9890;
-    --text-dim: #7a7870;
+    --text: #1a1916;
+    --text-muted: #5c5952;
+    --text-dim: #7a766c;
 
-    --accent: #e6b800;
-    --accent-bright: #f5c400;
+    --accent: #c9a227;      /* muted gold / oxide */
+    --accent-bright: #e0b52e;
 
-    --line: rgba(255,255,255,.08);
+    --line: rgba(0,0,0,.08);
 
     --radius-sm: 2px;
     --radius-md: 4px;
