@@ -293,7 +293,7 @@ p {
 .desktop-nav a {
     position: relative;
 	color: var(--text);
-    font-size: 12px;
+    font-size: 16px;
     font-weight: 500;
     letter-spacing: .01em;
     text-transform: none;
@@ -512,6 +512,7 @@ p {
     margin-inline: auto;
     overflow: hidden;
     background: var(--surface-2);
+	border-radius: 24px;
 }
 
 .hero-slider,
@@ -554,19 +555,18 @@ p {
 
 .hero-content {
     position: absolute;
-	inset: 0;
-    left: max(var(--page-padding), calc((100vw - var(--max-width)) / 2));
-    right: max(var(--page-padding), calc((100vw - var(--max-width)) / 2));
-    bottom: clamp(110px, 16vh, 130px);
-    z-index: 2;
-    width: min(850px, 100%);
-	display: flex;
-	flex-direction: column;
+    inset: 0;
+    margin: auto;
+    width: 100%;
+    max-width: 850px;
+    display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-	text-align: center;
+    text-align: center;
     padding: 40px;
     color: #fff;
+    z-index: var(--z-elevated);
 }
 
 .hero-eyebrow {
@@ -719,17 +719,19 @@ p {
 
 .about-features article {
     position: relative;
-    padding-top: 16px;
+    padding-top: 24px;
 }
 
-.about-features article::before {
+.about-features article::before,
+.profiles-heading h2::before {
     content: "";
     position: absolute;
     top: 0;
     left: 0;
     width: 40px;
-    height: 2px;
-    background: var(--accent);
+    height: 6px;
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 10"><path d="M0,5 Q5,0 10,5 T20,5" fill="none" stroke="%23171512" stroke-width="2"/></svg>') repeat-x;
+    background-size: 20px 10px;
 }
 
 .about-feature-number {
@@ -775,17 +777,12 @@ p {
     line-height: .95;
     letter-spacing: -.04em;
     position: relative;
-    padding-bottom: 16px;
+    padding-top: 24px;
+    padding-bottom: 0;
 }
 
 .profiles-heading h2::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 40px;
-    height: 2px;
-    background: var(--accent);
+    display: none;
 }
 
 .profiles-description,
@@ -1140,12 +1137,35 @@ p {
 /* ==========================
    Contact / CTA
 ========================== */
-.contact {
+.contact, .about-cta {
     padding-block: clamp(70px, 8vw, 100px);
-    color: #080808;
-    background: var(--accent);
+    color: var(--text);
+    background: var(--bg);
     text-align: center;
     border-radius: var(--radius-lg);
+}
+
+.contact .button-primary, .about-cta .button-primary {
+    background: var(--text);
+    border-color: var(--text);
+    color: #fff;
+}
+
+.contact .button-primary:hover, .about-cta .button-primary:hover {
+    background: var(--accent-bright);
+    border-color: var(--accent-bright);
+    color: #fff;
+}
+
+.contact .button-secondary, .about-cta .button-secondary {
+    border-color: rgba(23,21,18,.35);
+    color: var(--text);
+}
+
+.contact .button-secondary:hover, .about-cta .button-secondary:hover {
+    background: var(--text);
+    border-color: var(--text);
+    color: #fff;
 }
 
 .contact h2 {
@@ -1184,14 +1204,6 @@ p {
     background: #080808;
     border-color: #080808;
     color: #fff;
-}
-
-.about-cta {
-    background: var(--accent);
-    color: #080808;
-    text-align: center;
-    padding-block: clamp(70px, 8vw, 110px);
-    border-radius: var(--radius-lg);
 }
 
 .about-cta-inner {
@@ -1303,8 +1315,8 @@ p {
     width: min(calc(100% - (var(--page-padding) * 2)), var(--max-width));
     margin-inline: auto;
     display: grid;
-    grid-template-columns: 1.2fr 1fr 1fr;
-    gap: 24px;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px 24px;
     align-items: start;
 }
 
