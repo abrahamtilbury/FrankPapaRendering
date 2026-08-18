@@ -956,13 +956,8 @@ p {
 }
 
 .section-heading h2::after {
-    content: "";
-    position: absolute;
     left: 0;
     bottom: 0;
-    width: 40px;
-    height: 2px;
-    background: var(--accent);
 }
 
 .gallery-grid {
