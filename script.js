@@ -54,3 +54,45 @@ async function loadContentFromSheet() {
 
 // Run when page loads
 document.addEventListener("DOMContentLoaded", loadContentFromSheet);
+
+function initBeforeAfter() {
+  document.querySelectorAll(".ba-images").forEach(el => {
+    const slider = el.querySelector(".ba-slider");
+    if (!slider) return;
+
+    const setPos = (clientX) => {
+      const rect = el.getBoundingClientRect();
+      let p = ((clientX - rect.left) / rect.width) * 100;
+      p = Math.max(5, Math.min(95, p));
+      el.style.setProperty("--pos", p + "%");
+      slider.style.setProperty("--pos", p + "%");
+    };
+
+    const onMove = (e) => {
+      const x = e.touches ? e.touches[0].clientX : e.clientX;
+      setPos(x);
+    };
+
+    const stop = () => {
+      window.removeEventListener("mousemove", onMove);
+      window.removeEventListener("touchmove", onMove);
+    };
+
+    el.addEventListener("mousedown", (e) => {
+      setPos(e.clientX);
+      window.addEventListener("mousemove", onMove);
+      window.addEventListener("mouseup", stop, { once: true });
+    });
+
+    el.addEventListener("touchstart", (e) => {
+      setPos(e.touches[0].clientX);
+      window.addEventListener("touchmove", onMove, { passive: true });
+      window.addEventListener("touchend", stop, { once: true });
+    }, { passive: true });
+  });
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  loadContentFromSheet();
+  initBeforeAfter();
+});
