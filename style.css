@@ -16,7 +16,7 @@
     --line: rgba(23,21,18,.14);
 
     --radius-sm: 0;
-    --radius-md: 0;
+    --radius-md: 6px;
     --radius-lg: 0;
 
     --max-width: 1440px;
@@ -510,7 +510,7 @@ p {
     margin-inline: auto;
     overflow: hidden;
     background: var(--surface-2);
-	border-radius: 0 0 32px 32px;
+	border-radius: var(--radius-md);
 }
 
 .hero-slider,
@@ -815,7 +815,6 @@ p {
    aspect-ratio: 16 / 10;
    overflow: hidden;
    background: var(--surface-2);
-   border-radius: 0;
 }
 
 .profile-visual img {
