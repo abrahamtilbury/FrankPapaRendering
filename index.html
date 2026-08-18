@@ -45,21 +45,11 @@
     
     <!-- =========================
          HEADER / NAVIGATION
-         (kept identical structure to Stile Edge so mobile menu + header CSS still works)
     ========================== -->
-    
-    <div class="top-bar">
-        <div class="top-bar-inner">
-            <!-- UPDATE THESE with real numbers when you have them -->
-            <a href="tel:0428940262">0428 940 262</a>
-            <a href="mailto:frankpapaplastering@gmail.com">frankpapaplastering@gmail.com</a>
-            <span>All areas of Perth</span>
-            <span>Mon–Fri 7am–4pm</span>
-        </div>
-    </div>
         
     <header class="site-header">
         <div class="header-inner">
+            
             <a href="index.html" class="site-logo">
                 Frank Papa Plastering
             </a>
@@ -74,7 +64,7 @@
     
             <div class="header-actions">
                 <a href="tel:0428940262" class="header-phone">0428 940 262</a>
-                <a href="contact.html" class="header-cta">Get a Quote</a>
+                <a href="contact.html" class="header-cta">Call us</a>
             </div>
     
             <button
@@ -102,40 +92,47 @@
 
         <!-- =========================
              HERO
-             Changed from product/profile focus to clear solid-wall positioning
         ========================== -->
 
         <section class="hero">
-            <div class="hero-slider">
-                <div class="hero-slide is-active">
-                    <!-- Use a real finished-wall photo here -->
-                    <img src="images/hero-solid-wall.webp" alt="Solid wall plastering by Frank Papa" class="hero-image" width="1920" height="750" fetchpriority="high" decoding="async"/>
+            <div class="hero-frame">
+                <img
+                    src="images/hero-index.webp"
+                    alt="Solid wall plastering by Frank Papa Plastering in Perth"
+                    class="hero-image"
+                    width="1920"
+                    height="1200"
+                    fetchpriority="high"
+                    decoding="async"
+                />
+                
+                <div class="hero-overlay"></div>
+            
+                <div class="hero-content">
+                    
+                    <p class="hero-eyebrow">
+                        SOLID WALL PLASTERING · PERTH WA
+                    </p>
+                    
+                    <h1>
+                        Solid wall plastering
+                        <span>for Perth homes.</span>
+                    </h1>
+                    
+                    <p class="hero-text">
+                        Traditional float and white set plastering,
+                        and external rendering, applied directly to
+                        brick and block.
+                    </p>
+                    
+                    <a href="contact.html" class="hero-link">
+                        Request a quote
+                        <span>↗</span>
+                    </a>
+                    
                 </div>
-                <!-- Add 1–2 more finished wall / external render images later if desired -->
             </div>
-            <div class="hero-overlay"></div>
-        
-            <div class="hero-content">
-                <h1>
-                  <span data-content="Index.Hero.Title">Frank Papa Plastering</span>
-                  <span data-content="Index.Hero.Subtitle">Specialising in solid wall plastering</span>
-                </h1>
-                <p class="hero-text" data-content="Index.Hero.Text">
-                  Internal and external solid wall plastering on brick and block · Renovations · Home improvements · Repairs · Maintenance · All areas of Perth. Over forty years experience. No gyprock. No ceiling work.
-                </p>
-            </div>
-        
-            <div class="hero-actions">
-                <a href="contact.html" class="button button-primary">Get a Quote</a>
-                <a href="#services" class="button button-secondary">View Services</a>
-            </div>
-        
-            <!-- Keep arrow + dots structure if you want the slider behaviour later -->
-            <button class="hero-arrow hero-arrow-next" type="button" aria-label="Next slide">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
-            </button>
-        
-            <div class="hero-dots" role="tablist" aria-label="Hero slides"></div>
+            
         </section>
 
         <!-- =========================
