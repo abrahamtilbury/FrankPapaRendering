@@ -920,6 +920,7 @@ p {
     min-height: 480px;
     overflow: hidden;
     background: var(--surface-2);
+	border-radius: var(--radius-md);
 }
 
 .feature-image img {
@@ -974,6 +975,7 @@ p {
   background: var(--surface);
   box-shadow: 0 12px 32px -12px rgba(26, 25, 22, 0.12);
   overflow: hidden;
+  border-radius: var(--radius-md);
 }
 
 .ba-images {
