@@ -995,6 +995,9 @@ p {
     color: #080808;
 }
 
+.sticky-call {
+  display: none;
+}
 /* ==========================
    About-hero (inner pages)
 ========================== */
@@ -1305,6 +1308,35 @@ p {
         margin: 0;
         padding-inline: var(--page-padding);
     }
+
+	.sticky-call {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 500;
+    min-height: 52px;
+    padding: 0 16px;
+    background: var(--accent);
+    color: #080808;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    box-shadow: 0 -8px 24px rgba(0,0,0,.12);
+  }
+
+  .sticky-call:hover {
+    background: var(--accent-bright);
+    color: #080808;
+  }
+
+.site-footer {
+    padding-bottom: 72px;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
