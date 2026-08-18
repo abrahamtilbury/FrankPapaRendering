@@ -824,6 +824,92 @@ p {
     gap: 20px;
 }
 
+.ba-card {
+  background: var(--surface);
+  box-shadow: 0 12px 32px -12px rgba(26, 25, 22, 0.12);
+  overflow: hidden;
+}
+
+.ba-images {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  cursor: ew-resize;
+  user-select: none;
+  touch-action: none;
+}
+
+.ba-images img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none;
+}
+
+.ba-before {
+  clip-path: inset(0 calc(100% - var(--pos, 50%)) 0 0);
+}
+
+.ba-slider {
+  position: absolute;
+  inset: 0;
+  width: var(--pos, 50%);
+  border-right: 2px solid #fff;
+  pointer-events: none;
+}
+
+.ba-handle {
+  position: absolute;
+  top: 50%;
+  right: -18px;
+  width: 36px;
+  height: 36px;
+  transform: translateY(-50%);
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 4px 12px rgba(0,0,0,.2);
+}
+
+.ba-handle::before,
+.ba-handle::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 6px;
+  height: 6px;
+  border-right: 2px solid #1a1916;
+  border-bottom: 2px solid #1a1916;
+  transform: translateY(-50%) rotate(-45deg);
+}
+
+.ba-handle::before {
+  left: 10px;
+  transform: translateY(-50%) rotate(135deg);
+}
+
+.ba-handle::after {
+  right: 10px;
+}
+
+.ba-caption {
+  padding: 18px 20px 22px;
+}
+
+.ba-caption strong {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 20px;
+  letter-spacing: -0.02em;
+}
+
+.ba-caption p {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 14px;
+}
+
 .project-card {
     perspective: 1200px;
     cursor: pointer;
