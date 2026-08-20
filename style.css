@@ -106,7 +106,7 @@ select:focus-visible {
     background-color: var(--text-dim);
 }
 
-/* Subtle plaster/float texture — zero image requests */
+/* Subtle plaster/float texture  */
 body::before {
   	content: "";
   	position: fixed;
