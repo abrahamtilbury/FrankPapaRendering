@@ -1,98 +1,142 @@
-const SHEET_CSV_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQIPZ5ZkneAlqm-gf_rAaMCSC4X8RoXImDJ70R6njYvppXHDItVpQrH500aHwJUAy1jypGjfUPsBQce/pub?output=csv";
+/* ==========================
+   Mobile Navigation
+========================== */
 
-async function loadContentFromSheet() {
-  try {
-    const response = await fetch(SHEET_CSV_URL);
-    const csvText = await response.text();
+function initMobileMenu() {
+  const button = document.querySelector(".menu-button");
+  const menu = document.querySelector(".mobile-menu");
 
-    // Simple CSV parse (handles quoted fields)
-    const rows = csvText
-      .trim()
-      .split("\n")
-      .map(row => {
-        const values = [];
-        let current = "";
-        let inQuotes = false;
+  if (!button || !menu) return;
 
-        for (let i = 0; i < row.length; i++) {
-          const char = row[i];
-          if (char === '"') {
-            inQuotes = !inQuotes;
-          } else if (char === "," && !inQuotes) {
-            values.push(current.trim());
-            current = "";
-          } else {
-            current += char;
-          }
-        }
-        values.push(current.trim());
-        return values;
-      });
+  const closeMenu = () => {
+    menu.classList.remove("open");
+    button.setAttribute("aria-expanded", "false");
+    button.setAttribute("aria-label", "Open navigation");
+  };
 
-    // Skip header row
-    const data = {};
-    for (let i = 1; i < rows.length; i++) {
-      const [page, section, field, content] = rows[i];
-      if (page && section && field) {
-        const key = `${page}.${section}.${field}`;
-        data[key] = content || "";
-      }
+  button.addEventListener("click", () => {
+    const isOpen = menu.classList.toggle("open");
+
+    button.setAttribute("aria-expanded", String(isOpen));
+    button.setAttribute(
+      "aria-label",
+      isOpen ? "Close navigation" : "Open navigation"
+    );
+  });
+
+  menu.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", closeMenu);
+  });
+
+  document.addEventListener("keydown", event => {
+    if (event.key === "Escape") {
+      closeMenu();
+      button.focus();
     }
-
-    // Inject into the page
-    document.querySelectorAll("[data-content]").forEach(el => {
-      const key = el.getAttribute("data-content");
-      if (data[key]) {
-        el.textContent = data[key];
-      }
-    });
-
-  } catch (err) {
-    console.error("Failed to load content from Google Sheet:", err);
-  }
+  });
 }
 
-// Run when page loads
-document.addEventListener("DOMContentLoaded", loadContentFromSheet);
+
+/* ==========================
+   Before / After Sliders
+========================== */
 
 function initBeforeAfter() {
   document.querySelectorAll(".ba-images").forEach(el => {
     const slider = el.querySelector(".ba-slider");
+
     if (!slider) return;
 
-    const setPos = (clientX) => {
+    let position = 50;
+
+    const applyPosition = value => {
+      position = Math.max(5, Math.min(95, value));
+
+      el.style.setProperty("--pos", `${position}%`);
+      slider.style.setProperty("--pos", `${position}%`);
+
+      el.setAttribute("aria-valuenow", String(Math.round(position)));
+    };
+
+    const setFromPointer = clientX => {
       const rect = el.getBoundingClientRect();
-      let p = ((clientX - rect.left) / rect.width) * 100;
-      p = Math.max(5, Math.min(95, p));
-      el.style.setProperty("--pos", p + "%");
-      slider.style.setProperty("--pos", p + "%");
+      const value = ((clientX - rect.left) / rect.width) * 100;
+
+      applyPosition(value);
     };
 
-    const onMove = (e) => {
-      const x = e.touches ? e.touches[0].clientX : e.clientX;
-      setPos(x);
-    };
-
-    const stop = () => {
-      window.removeEventListener("mousemove", onMove);
-      window.removeEventListener("touchmove", onMove);
-    };
-
-    el.addEventListener("mousedown", (e) => {
-      setPos(e.clientX);
-      window.addEventListener("mousemove", onMove);
-      window.addEventListener("mouseup", stop, { once: true });
+    el.addEventListener("pointerdown", event => {
+      el.setPointerCapture(event.pointerId);
+      setFromPointer(event.clientX);
     });
 
-    el.addEventListener("touchstart", (e) => {
-      setPos(e.touches[0].clientX);
-      window.addEventListener("touchmove", onMove, { passive: true });
-      window.addEventListener("touchend", stop, { once: true });
-    }, { passive: true });
+    el.addEventListener("pointermove", event => {
+      if (!el.hasPointerCapture(event.pointerId)) return;
+
+      setFromPointer(event.clientX);
+    });
+
+    el.addEventListener("keydown", event => {
+      if (event.key === "ArrowLeft") {
+        event.preventDefault();
+        applyPosition(position - 5);
+      }
+
+      if (event.key === "ArrowRight") {
+        event.preventDefault();
+        applyPosition(position + 5);
+      }
+
+      if (event.key === "Home") {
+        event.preventDefault();
+        applyPosition(5);
+      }
+
+      if (event.key === "End") {
+        event.preventDefault();
+        applyPosition(95);
+      }
+    });
+
+    applyPosition(50);
   });
 }
 
+
+/* ==========================
+   Project Cards
+========================== */
+
+function initProjectCards() {
+  document.querySelectorAll(".project-card").forEach(card => {
+    card.setAttribute("tabindex", "0");
+    card.setAttribute("role", "button");
+    card.setAttribute("aria-expanded", "false");
+
+    const toggleCard = () => {
+      const isFlipped = card.classList.toggle("is-flipped");
+
+      card.setAttribute("aria-expanded", String(isFlipped));
+    };
+
+    card.addEventListener("click", toggleCard);
+
+    card.addEventListener("keydown", event => {
+      if (event.key === "Enter" || event.key === " ") {
+        event.preventDefault();
+        toggleCard();
+      }
+    });
+  });
+}
+
+
+/* ==========================
+   Initialise
+========================== */
+
 document.addEventListener("DOMContentLoaded", () => {
-  loadContentFromSheet();
+  initMobileMenu();
   initBeforeAfter();
+  initProjectCards();
 });
