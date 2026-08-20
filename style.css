@@ -114,7 +114,7 @@ body::before {
   	z-index: var(--z-base);
   	pointer-events: none;
   	opacity: 0.035;
-  	background-image: url('plaster-noise.webp');
+  	background-image: url('images/plaster-noise.webp');
 	background-repeat: repeat;
 }
 
