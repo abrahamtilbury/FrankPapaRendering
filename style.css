@@ -329,7 +329,7 @@ p {
 
 .desktop-nav a:hover,
 .desktop-nav a[aria-current="page"] {
-    color: #fff;
+    color: var(--text);
 }
 
 .header-actions {
@@ -440,14 +440,14 @@ p {
 
 .button-primary {
     background: var(--accent);
-    color: #080808;
+    color: #fff;
     border: 1px solid var(--accent);
 }
 
 .button-primary:hover {
     background: var(--accent-bright);
     border-color: var(--accent-bright);
-    color: #080808;
+    color: #fff;
     transform: translateY(-2px);
 }
 
@@ -1421,13 +1421,10 @@ p {
 
 
 .copyright {
-    border-top: 1px solid var(--line);
-	border-top-color: rgba(23,21,18,.1);
 	color: var(--text);
 	font-size: 13px;
     font-weight: 700;
 	margin: 0;
-    padding-top: 18px;
 }
 
 /* ==========================
@@ -1483,10 +1480,6 @@ p {
         gap: 16px;
     }
 
-    .site-header {
-        top: 32px;
-    }
-
     .header-inner {
         min-height: 76px;
         grid-template-columns: 1fr auto auto;
@@ -1508,7 +1501,7 @@ p {
         padding: 0 12px;
         margin-right: 0;
         background: var(--accent);
-        color: #080808;
+        color: #fff;
         font-size: 10px;
         font-weight: 800;
         letter-spacing: .06em;
@@ -1528,7 +1521,7 @@ p {
         padding: 0;
         border: 0;
         background: transparent;
-        color: #fff;
+        color: var(--text);
         cursor: pointer;
     }
 
@@ -1553,10 +1546,17 @@ p {
     }
 
     .hero-content {
+        width: auto;
+
         left: var(--page-padding);
-        right: calc(var(--page-padding) + 52px);
+    
+        right: var(--page-padding);
+    
         top: 26%;
+    
         bottom: auto;
+    
+        padding: 20px;
     }
 
     .hero h1 {
@@ -1594,6 +1594,7 @@ p {
         min-height: min(520px, 78svh);
         padding-top: 96px;
         align-items: center;
+        color: #fff;
     }
 
     .about-hero-content {
@@ -1613,7 +1614,7 @@ p {
 	    min-height: 52px;
 	    padding: 0 16px;
 	    background: var(--accent);
-	    color: #080808;
+	    color: #fff;
 	    font-size: 13px;
 	    font-weight: 800;
 	    letter-spacing: 0.08em;
@@ -1623,7 +1624,8 @@ p {
 
   .sticky-call:hover {
     background: var(--accent-bright);
-    color: #080808;
+
+    color: #fff;
   }
 
 }
